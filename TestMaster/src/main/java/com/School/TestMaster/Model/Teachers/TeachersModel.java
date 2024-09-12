@@ -11,7 +11,7 @@ import lombok.NonNull;
 @NoArgsConstructor
 @Entity
 @Table(name = "Teachers")
-public class Teachers {
+public class TeachersModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
