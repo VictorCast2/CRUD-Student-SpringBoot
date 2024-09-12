@@ -19,6 +19,7 @@ public class StudentsModel {
     private String LastName;
 
     @Basic
+    @NonNull
     private String Note30;
     private String Note70;
 }

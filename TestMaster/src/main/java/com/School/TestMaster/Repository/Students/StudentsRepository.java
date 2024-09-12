@@ -1,4 +1,4 @@
-package com.School.TestMaster.Repository;
+package com.School.TestMaster.Repository.Students;
 
 import com.School.TestMaster.Model.Students.StudentsModel;
 import org.springframework.data.jpa.repository.JpaRepository;
