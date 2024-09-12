@@ -1,14 +1,17 @@
-package com.School.TestMaster.Model.Students;
+package com.School.TestMaster.Model.Teachers;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "Students")
-public class StudentsModel {
+@Table(name = "Teachers")
+public class Teachers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
@@ -17,8 +20,4 @@ public class StudentsModel {
     @NonNull
     private String FirstName;
     private String LastName;
-
-    @Basic
-    private String Note30;
-    private String Note70;
 }
