@@ -4,7 +4,6 @@ import com.School.TestMaster.Model.Teachers.TeachersModel;
 import com.School.TestMaster.Services.Teachers.TeachersServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -14,28 +13,29 @@ public class TeachersController {
     private TeachersServices teachersServices;
 
     @GetMapping
-    public List<TeachersModel> ObtenerProfesores() {
+    public List<TeachersModel> ObtenerProfesores () {
         return teachersServices.ObtenerTeachers();
     }
 
-    @GetMapping("/{id}")
-    public TeachersModel ObtenerTeachersPorID(@PathVariable Long id) {
-        return teachersServices.ObtenerTeachersPorID();
+    @GetMapping("/{Id}")
+    public TeachersModel ObtenerProfesorPorID (@PathVariable Long Id) {
+        return teachersServices.ObtenerTeachersPorID(Id);
     }
 
     @PostMapping
-    public TeachersModel createTeacher(@RequestBody TeachersModel teacher) {
-        return teachersServices.saveTeacher(teacher);
+    public TeachersModel GuardarProfesor (@RequestBody TeachersModel Teacher) {
+        return teachersServices.GuardarTeachers(Teacher);
     }
 
-    @PutMapping("/{id}")
-    public TeachersModel updateTeacher(@PathVariable Long id, @RequestBody TeachersModel teacher) {
-        teacher.setId(id);
-        return teachersServices.saveTeacher(teacher);
+    @PutMapping("/{Id}")
+    public TeachersModel ActualizarProfesorPorID (@PathVariable Long Id, @RequestBody TeachersModel Teacher) {
+        Teacher.setId(Id);
+        return teachersServices.GuardarTeachers(Teacher);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteTeacher(@PathVariable Long id) {
-        teachersServices.deleteTeacher(id);
+    @DeleteMapping("/{Id}")
+    public void EliminarProfesor (@PathVariable Long Id) {
+        teachersServices.EliminarTeachers(Id);
     }
+
 }
