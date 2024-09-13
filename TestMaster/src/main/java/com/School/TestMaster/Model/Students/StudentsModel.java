@@ -9,6 +9,7 @@ import lombok.*;
 @Entity
 @Table(name = "Students")
 public class StudentsModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
@@ -18,8 +19,4 @@ public class StudentsModel {
     private String FirstName;
     private String LastName;
 
-    @Basic
-    @NonNull
-    private String Note30;
-    private String Note70;
 }

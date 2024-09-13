@@ -1,4 +1,4 @@
-package com.School.TestMaster.Model.Teachers;
+package com.School.TestMaster.Model.Curso;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,8 +10,8 @@ import lombok.NonNull;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "Teachers")
-public class TeachersModel {
+@Table(name = "Curso")
+public class CursoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +19,8 @@ public class TeachersModel {
 
     @Basic
     @NonNull
-    private String FirstName;
-    private String LastName;
+    private String Asignatura;
+    private Double Note30;
+    private Double Note70;
+
 }
