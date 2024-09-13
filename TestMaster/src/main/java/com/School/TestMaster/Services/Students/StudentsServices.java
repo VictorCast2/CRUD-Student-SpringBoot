@@ -1,10 +1,12 @@
 package com.School.TestMaster.Services.Students;
 
+import com.School.TestMaster.Model.Curso.CursoModel;
 import com.School.TestMaster.Model.Students.StudentsModel;
 import com.School.TestMaster.Repository.Students.StudentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -58,6 +60,18 @@ public class StudentsServices {
      **/
     public void EliminarStudent(Long id) {
         studentsRepository.deleteById(id);
+    }
+
+    /**
+     * Obtiene los cursos de un estudiante por su ID.
+     *
+     * @param Id el ID del estudiante.
+     *
+     * @return Una lista de cursos asociados al estudiante.
+     **/
+    public List<CursoModel> ObtenerCursosPorID(Long id) {
+        StudentsModel student = studentsRepository.findById(id).orElse(null);
+        return student != null ? student.getCursos() : new ArrayList<>();
     }
 
     /**

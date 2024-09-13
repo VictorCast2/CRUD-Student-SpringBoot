@@ -1,13 +1,15 @@
 package com.School.TestMaster.Controller.Students;
 
+import com.School.TestMaster.Model.Curso.CursoModel;
 import com.School.TestMaster.Model.Students.StudentsModel;
 import com.School.TestMaster.Services.Students.StudentsServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("Students")
+@RequestMapping("/Api/Students")
 public class StudentsController {
 
     @Autowired

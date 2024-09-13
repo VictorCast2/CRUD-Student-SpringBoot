@@ -1,5 +1,6 @@
 package com.School.TestMaster.Controller.Teachers;
 
+import com.School.TestMaster.Model.Curso.CursoModel;
 import com.School.TestMaster.Model.Teachers.TeachersModel;
 import com.School.TestMaster.Services.Teachers.TeachersServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("Teachers")
+@RequestMapping("/Api/Teachers")
 public class TeachersController {
     @Autowired
     private TeachersServices teachersServices;
@@ -36,6 +37,27 @@ public class TeachersController {
     @DeleteMapping("/{Id}")
     public void EliminarProfesor (@PathVariable Long Id) {
         teachersServices.EliminarTeachers(Id);
+    }
+
+    /**
+     * Agrega un curso a un profesor.
+     *
+     * @param teacherId el ID del profesor.
+     * @param curso el curso a agregar.
+     */
+    @PostMapping("/agregar/{teacherId}")
+    public void AgregarCurso(@PathVariable Long teacherId, @RequestBody CursoModel curso) {
+        teachersServices.AgregarCurso(teacherId, curso);
+    }
+
+    /**
+     * Elimina un curso de un profesor.
+     *
+     * @param cursoId el ID del curso a eliminar.
+     */
+    @DeleteMapping("/eliminar/{cursoId}")
+    public void eliminarCurso(@PathVariable Long cursoId) {
+        teachersServices.EliminarCurso(cursoId);
     }
 
 }
