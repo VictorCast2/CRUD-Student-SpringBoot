@@ -8,7 +8,7 @@ public class MainController {
 
     @GetMapping(" ")
     public String Login(){
-        return "Login";
+        return "Index";
     }
 
 }
