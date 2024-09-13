@@ -29,7 +29,7 @@ public class TeachersServices {
      *
      * @return El modelo del profesor si se encuentra, de lo contrario, null.
      **/
-    public TeachersModel ObtenerStudentPorID(Long id) {
+    public TeachersModel ObtenerTeachersPorID(Long id) {
         return teachersRepository.findById(id).orElse(null);
     }
 
@@ -40,7 +40,7 @@ public class TeachersServices {
      *
      * @return El modelo del profesor guardado.
      **/
-    public TeachersModel GuardarStudent(TeachersModel teacher) {
+    public TeachersModel GuardarTeachers(TeachersModel teacher) {
         return teachersRepository.save(teacher);
     }
 
@@ -49,7 +49,7 @@ public class TeachersServices {
      *
      * @param Id El ID del profesor a eliminar.
      **/
-    public void EliminarStudent(Long id) {
+    public void EliminarTeachers(Long id) {
         teachersRepository.deleteById(id);
     }
 
