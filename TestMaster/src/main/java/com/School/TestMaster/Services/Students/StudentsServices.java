@@ -60,4 +60,16 @@ public class StudentsServices {
         studentsRepository.deleteById(id);
     }
 
+    /**
+     * Calcula el promedio final del estudiante.
+     *
+     * @param nota30 La nota del 30%.
+     * @param nota70 La nota del 70%.
+     *
+     * @return El promedio de la nota final.
+     **/
+    public Double PromedioDelEstudiante(Double nota30, Double nota70) {
+        return ((nota30 * 0.3) + (nota70 * 0.7));
+    }
+
 }
