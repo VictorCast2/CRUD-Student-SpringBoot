@@ -16,7 +16,7 @@ import com.agenda.contactos.modelo.Contacto;
 import com.agenda.contactos.repositorio.ContactoRepositorio;
 
 @Controller
-public class ContactoControlador {
+public class ContactoControlador{
 
 	@Autowired
 	private ContactoRepositorio contactoRepositorio;
@@ -40,9 +40,7 @@ public class ContactoControlador {
 			modelo.addAttribute("contacto", contacto);
 			return "nuevo";
 		}
-		
 		contactoRepositorio.save(contacto);
-		// Agrega un mensaje de éxito a los atributos flash para que se muestre después de la redirección
 		redirect.addFlashAttribute("msgExito", "El contacto ha sido agregado con exito");
 		return "redirect:/";
 	}
@@ -78,4 +76,5 @@ public class ContactoControlador {
 		redirect.addFlashAttribute("msgExito", "El contacto ha sido eliminado correctamente");
 		return "redirect:/";
 	}
+
 }

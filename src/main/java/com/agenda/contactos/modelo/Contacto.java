@@ -37,6 +37,7 @@ public class Contacto {
 
 	@DateTimeFormat(iso = ISO.DATE)
 	@Past
+
 	/**
 	 * @DateTimeFormat(iso = ISO.DATE): Esta anotación se utiliza para especificar el formato de fecha que se espera al recibir datos de entrada.
 	 * @Past: Esta anotación se utiliza para validar que la fecha proporcionada es una fecha pasada.
